@@ -1,0 +1,29 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Article from './Article';
+
+const ArticleList = ({ articles }) => (
+  <ul>
+    {articles.map((article) => (
+      <li key={article.title}>
+        <Article
+          title={article.title}
+          author={article.author}
+          description={article.description}
+        />
+      </li>
+    ))}
+  </ul>
+);
+
+ArticleList.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+export default ArticleList;
