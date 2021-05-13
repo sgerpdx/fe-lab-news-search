@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Article from './Article';
 
 const ArticleList = ({ articles }) => (
-  <ul>
+  <ul aria-label="articles">
     {articles.map((article) => (
       <li key={article.title}>
         <Article
@@ -20,7 +20,7 @@ ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
     })
   ).isRequired,

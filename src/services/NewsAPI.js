@@ -1,10 +1,13 @@
+//import dotenv from 'dotenv';
+require('dotenv').config();
 const newsKey = process.env.NEWS_API_KEY;
 
-export const fetchArticles = async (query) => {
+export const fetchArticles = async () => {
   const res = await fetch(
-    `https://newsapi.org/v2/everything?q={query}&{newsKey}`
+    `https://newsapi.org/v2/everything?q=amazon&apiKey=${newsKey}`
   );
-  const { data } = await res.json();
+  console.log('REZZZZ', res);
+  const data = await res.json();
   const articles = data.articles;
 
   return articles.map((article) => ({
