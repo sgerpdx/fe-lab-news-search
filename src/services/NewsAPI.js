@@ -6,7 +6,6 @@ export const fetchArticles = async () => {
   const res = await fetch(
     `https://newsapi.org/v2/everything?q=amazon&apiKey=${newsKey}`
   );
-  console.log('REZZZZ', res);
   const data = await res.json();
   const articles = data.articles;
 

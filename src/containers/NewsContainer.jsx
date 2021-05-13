@@ -1,3 +1,4 @@
+require('dotenv').config();
 import React, { Component } from 'react';
 import ArticleList from '../components/ArticleList';
 import { fetchArticles } from '../services/NewsAPI';
@@ -10,6 +11,7 @@ export default class NewsContainer extends Component {
 
   async componentDidMount() {
     const articles = await fetchArticles();
+
     this.setState({
       loading: false,
       articles,
